@@ -22,16 +22,15 @@ const game = () => {
     const comp = document.querySelector(".computer-hand");
     const hands = document.querySelectorAll(".hands img");
 
-    hands.forEach(hand => {
-      hand.addEventListener("animationend", function() {
+    hands.forEach((hand) => {
+      hand.addEventListener("animationend", function () {
         this.style.animation = "";
       });
     });
     //Comp hand options
     const compOptions = ["rock", "paper", "scissors"];
-
-    options.forEach(option => {
-      option.addEventListener("click", function() {
+    options.forEach((option) => {
+      option.addEventListener("click", function () {
         const compNum = Math.floor(Math.random() * 3);
         const compChoice = compOptions[compNum];
 
@@ -64,7 +63,6 @@ const game = () => {
       updateScore();
       return;
     }
-
     //rock
     if (playerChoice === "rock") {
       if (compChoice === "scissors") {
@@ -79,7 +77,6 @@ const game = () => {
         return;
       }
     }
-
     //paper
     if (playerChoice === "paper") {
       if (compChoice === "scissors") {
@@ -94,7 +91,6 @@ const game = () => {
         return;
       }
     }
-
     //scissors
     if (playerChoice === "scissors") {
       if (compChoice === "rock") {
@@ -110,11 +106,9 @@ const game = () => {
       }
     }
   };
-
   //call inner functions
   startGame();
   playMatch();
 };
-
 //start game
 game();
